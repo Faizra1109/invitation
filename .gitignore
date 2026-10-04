@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment and secrets
+.env
+.env.local
+.env.*.local
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Temporary and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Setup helper script
+setup_git.ps1
