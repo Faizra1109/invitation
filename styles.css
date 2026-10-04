@@ -650,6 +650,49 @@ body {
 /* ==========================================================================
    SECTION 2: BRIDE & GROOM INTRODUCTION
    ========================================================================== */
+.couple-portrait-wrapper {
+  max-width: 680px;
+  margin: 0 auto 35px;
+  position: relative;
+}
+
+.couple-portrait-arch-frame {
+  position: relative;
+  border-radius: 200px 200px 24px 24px;
+  overflow: hidden;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6), 0 0 25px rgba(223, 183, 108, 0.28);
+  border: 2px solid rgba(223, 183, 108, 0.5);
+  background: var(--blue-navy-dark);
+}
+
+.couple-portrait-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s var(--ease-royal);
+}
+
+.couple-portrait-arch-frame:hover .couple-portrait-img {
+  transform: scale(1.03);
+}
+
+.couple-portrait-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(2, 8, 20, 0.1) 0%, rgba(2, 8, 20, 0.5) 100%);
+  pointer-events: none;
+}
+
+.couple-portrait-border {
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(223, 183, 108, 0.35);
+  border-radius: 192px 192px 18px 18px;
+  pointer-events: none;
+}
+
 .couple-showcase {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
