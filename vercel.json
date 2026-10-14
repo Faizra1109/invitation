@@ -1,7 +1,4 @@
 {
-  "version": 2,
-  "cleanUrls": true,
-  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
@@ -9,15 +6,11 @@
         {
           "key": "Access-Control-Allow-Origin",
           "value": "*"
-        },
-        {
-          "key": "Access-Control-Allow-Methods",
-          "value": "GET, OPTIONS"
         }
       ]
     },
     {
-      "source": "/(.*)\\.(mp3|ogg|wav)",
+      "source": "/audio/(.*)",
       "headers": [
         {
           "key": "Content-Type",
@@ -26,25 +19,14 @@
         {
           "key": "Accept-Ranges",
           "value": "bytes"
-        },
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
         }
       ]
     }
   ],
-  "routes": [
+  "rewrites": [
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/public/audio/(.*)",
-      "dest": "/audio/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/public/audio/:match*",
+      "destination": "/audio/:match*"
     }
   ]
 }
