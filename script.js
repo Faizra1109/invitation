@@ -894,9 +894,10 @@ function initAudioSystem() {
       isMuted = !isMuted;
       if (audioElement) {
         audioElement.muted = isMuted;
+        audioElement.volume = 1.0;
       }
       if (masterGain && audioCtx) {
-        masterGain.gain.setValueAtTime(isMuted ? 0 : 0.22, audioCtx.currentTime);
+        masterGain.gain.setValueAtTime(isMuted ? 0 : 0.75, audioCtx.currentTime);
       }
       muteToggleBtn.classList.toggle('muted', isMuted);
       if (speakerIconPath) {
@@ -916,7 +917,7 @@ function initAudioSystem() {
     osc.frequency.setValueAtTime(freq, time);
 
     noteGain.gain.setValueAtTime(0, time);
-    noteGain.gain.linearRampToValueAtTime(0.09, time + 0.05);
+    noteGain.gain.linearRampToValueAtTime(0.28, time + 0.05);
     noteGain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
 
     osc.connect(noteGain);
@@ -932,7 +933,7 @@ function initAudioSystem() {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtx = new AudioContext();
       masterGain = audioCtx.createGain();
-      masterGain.gain.setValueAtTime(isMuted ? 0 : 0.22, audioCtx.currentTime);
+      masterGain.gain.setValueAtTime(isMuted ? 0 : 0.75, audioCtx.currentTime);
       masterGain.connect(audioCtx.destination);
     }
 
@@ -1017,6 +1018,7 @@ function initAudioSystem() {
     if (audioElement) {
       audioElement.loop = true;
       audioElement.muted = isMuted;
+      audioElement.volume = 1.0;
       const playPromise = audioElement.play();
 
       if (playPromise !== undefined) {
