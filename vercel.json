@@ -10,7 +10,7 @@
       ]
     },
     {
-      "source": "/audio/(.*)",
+      "source": "/(.*)\\.(mp3|ogg|wav)",
       "headers": [
         {
           "key": "Content-Type",
@@ -21,12 +21,6 @@
           "value": "bytes"
         }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/public/audio/:match*",
-      "destination": "/audio/:match*"
     }
   ]
 }
