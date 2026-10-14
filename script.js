@@ -1014,62 +1014,49 @@ function initAudioSystem() {
     if (isPlaying) return;
     const dict = i18n[currentLanguage] || i18n.en;
 
+    // Immediately create / resume AudioContext during user click gesture
+    if (!audioCtx) {
+      try {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+        masterGain = audioCtx.createGain();
+        masterGain.gain.setValueAtTime(isMuted ? 0 : 0.75, audioCtx.currentTime);
+        masterGain.connect(audioCtx.destination);
+      } catch (e) {
+        console.warn('AudioContext creation:', e);
+      }
+    }
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
+    }
+
     if (audioElement) {
       audioElement.loop = true;
       audioElement.muted = isMuted;
       audioElement.volume = 1.0;
 
-      // Pre-load to detect file availability before triggering play
-      audioElement.load();
+      // Crucial: Call play() synchronously inside the user interaction handler
+      const playPromise = audioElement.play();
 
-      const onCanPlay = () => {
-        audioElement.removeEventListener('canplaythrough', onCanPlay);
-        audioElement.removeEventListener('error', onError);
-
-        const playPromise = audioElement.play();
-        if (playPromise !== undefined) {
-          playPromise.then(() => {
-            isUsingAudioFile = true;
-            setPlayingState(true);
-            showToast(dict.music_toast_start);
-          }).catch((err) => {
-            console.warn('Audio play() blocked:', err.message, '— switching to synthesizer.');
-            setPlayingState(true);
-            startSynthHarmony();
-            showToast(dict.music_toast_start);
-          });
-        } else {
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
           isUsingAudioFile = true;
           setPlayingState(true);
           showToast(dict.music_toast_start);
-        }
-      };
-
-      const onError = () => {
-        audioElement.removeEventListener('canplaythrough', onCanPlay);
-        audioElement.removeEventListener('error', onError);
-        console.warn('Audio file unavailable — switching to synthesizer.');
-        setPlayingState(true);
-        startSynthHarmony();
-        showToast(dict.music_toast_start);
-      };
-
-      audioElement.addEventListener('canplaythrough', onCanPlay, { once: true });
-      audioElement.addEventListener('error', onError, { once: true });
-
-      // Safety timeout: if neither event fires in 6 seconds, fall back to synth
-      setTimeout(() => {
-        if (!isPlaying) {
-          audioElement.removeEventListener('canplaythrough', onCanPlay);
-          audioElement.removeEventListener('error', onError);
-          console.warn('Audio load timed out — switching to synthesizer.');
+        }).catch((err) => {
+          console.warn('Audio file play prevented (' + err.message + ') — switching to serene harmony.');
+          isUsingAudioFile = false;
           setPlayingState(true);
           startSynthHarmony();
           showToast(dict.music_toast_start);
-        }
-      }, 6000);
-
+        });
+      } else {
+        isUsingAudioFile = true;
+        setPlayingState(true);
+        showToast(dict.music_toast_start);
+      }
     } else {
+      isUsingAudioFile = false;
       setPlayingState(true);
       startSynthHarmony();
       showToast(dict.music_toast_start);
@@ -1127,9 +1114,11 @@ function initCalendarAndMapActions() {
   const shareWaBtn = document.getElementById('share-whatsapp-btn');
   if (shareWaBtn) {
     shareWaBtn.addEventListener('click', () => {
-      let text = '';
-      const canonicalUrl = 'https://faizwedssheik.vercel.app/';
+      const canonicalUrl = (window.location && window.location.origin && window.location.origin !== 'null') 
+        ? (window.location.origin + window.location.pathname) 
+        : 'https://faizsheikinvitation.vercel.app/';
 
+      let text = '';
       if (currentLanguage === 'ar') {
         text = encodeURIComponent(
           '✨ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ ✨\n\n' +
