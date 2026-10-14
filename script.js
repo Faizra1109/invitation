@@ -1,7 +1,7 @@
 /**
  * LUXURY ISLAMIC NIKAH INVITATION - CLIENT LOGIC
- * Faizra & Mohamed Sheik Ismail
- * 24 December 2026 • 10:30 AM • Richway Garden, Katheeja
+ * Faiz Weds Sheik (A. Faizra & R. Mohamed Sheik Ismail)
+ * Thursday, 24 December 2026 • 10:30 AM • Richway Garden, Khadeja Mahal
  * Languages: English (en) | Tamil (ta) | Arabic (ar)
  */
 
@@ -14,69 +14,65 @@ const i18n = {
     music_playing: "Music Playing",
     music_toast_start: "Serene Ambient Harmony Started",
     music_toast_pause: "Music Paused",
-    envelope_subtitle: "Royal Islamic Wedding Invitation",
-    bride_name: "A. Faizra",
-    groom_name: "R. Mohamed Sheik Ismail",
-    envelope_date_preview: "Thursday, 24 December 2026 • Katheeja",
-    envelope_tap_hint: "Tap Gold Seal to Open Invitation",
     bismillah_trans: "\"In the Name of Allah, the Most Gracious, the Most Merciful\"",
     hero_proclamation: "Solemnization of Sacred Matrimony",
-    hero_title: "The Nikah Ceremony",
-    hero_announcement: "Under the divine benevolence of <strong>Allah (Subhanahu Wa Ta'ala)</strong> and with heartfelt blessings from our parents and elders, we joyfully invite you to grace the blessed Nikah of our beloved children.",
-    couple_tag: "The Blessed Couple",
+    hero_title: "Faiz Weds Sheik",
+    hero_announcement: "Under the divine benevolence of <strong>Allah (Subhanahu Wa Ta'ala)</strong> and with heartfelt blessings from our parents and elders, we cordially request the honour of your esteemed presence and dua to witness and celebrate the sacred knot of Nikah.",
+    scratch_instruction: "Scratch to Reveal Our Special Day",
+    scratch_revealed_names: "A. Faizra & R. Mohamed Sheik Ismail",
+    scratch_revealed_sub: "Thursday, 24 December 2026 • Richway Garden, Khadeja Mahal",
+    scratch_revealed_badge: "Blessed Sacred Union",
+    btn_scratch_reveal: "✦ Tap to Instantly Reveal Special Day ✦",
+    music_choice_prompt: "Would you like to play the serene ambient wedding melody while viewing?",
+    btn_play_music: "Play Music",
+    btn_no_thanks: "No Thanks",
+    couple_tag: "The Blessed Couple & Families",
     couple_title: "Two Souls United by Faith & Love",
     couple_desc: "Embarking on a lifetime journey guided by mercy, mutual affection, and the Sunnah of our beloved Prophet Muhammad ﷺ.",
     bride_role: "The Bride",
+    bride_name: "A. Faizra",
     bride_parents_title: "Cherished Daughter of",
     bride_parents: "Janab K.M. Ahamed Ali<br>&amp; A. Hajreen Begum",
     groom_role: "The Groom",
+    groom_name: "R. Mohamed Sheik Ismail",
     groom_parents_title: "Cherished Son of",
     groom_parents: "(Late) Mr. M. Rahumathullah<br>&amp; Mrs. R. Barsana Begum",
-    event_tag: "Auspicious Occasion",
+    family_bride_side: "Bride's Parents",
+    family_bride_rel: "Cordially request your warm presence and blessings",
+    family_groom_side: "Groom's Parents",
+    family_groom_rel: "Cordially invite you to celebrate this blessed covenant",
+    family_invitation_msg: "\"Your presence and warm prayers will illuminate our celebration and bring abundant joy to our union.\"",
+    event_tag: "Sacred Ceremony",
     event_title: "Nikah Solemnization",
-    event_desc: "We cordially request the honour of your esteemed presence and dua to witness and celebrate the knot of Nikah.",
     card_day_date_label: "Day & Date",
     card_day_val: "Thursday",
     card_date_val: "24 December 2026",
     card_time_label: "Nikah Time",
     card_time_val: "10:30 AM",
     card_time_sub: "Morning Ceremony",
-    card_venue_label: "Destination",
-    venue_name: "Richway Garden",
-    venue_location: "Katheeja",
+    card_venue_label: "Venue",
+    venue_name_full: "Richway Garden, Khadeja Mahal",
+    venue_sub_location: "Pattukkottai - Adirai Road, Adirampattinam",
     venue_timing_badge: "Thursday, 24 December 2026 • 10:30 AM Onwards",
     btn_gcal: "Add to Google Calendar",
     btn_ics: "Apple / Outlook iCal (.ics)",
-    countdown_tag: "Count Every Moment",
-    countdown_title: "Counting Down to the Blessed Hour",
-    countdown_desc: "With hearts filled with excitement and anticipation for Thursday, 24 December 2026 at 10:30 AM.",
+    venue_countdown_tag: "Venue & Live Countdown",
+    venue_section_title: "The Wedding Venue & Countdown",
+    venue_desc: "We eagerly await welcoming you to share in our celebration at this beautiful destination on Thursday, 24 December 2026 at 10:30 AM.",
     count_days: "Days",
     count_hours: "Hours",
     count_minutes: "Minutes",
     count_seconds: "Seconds",
     countdown_status: "Until We Say \"Qubool Hai\" Insha'Allah",
     countdown_today: "Alhamdulillah, Today is the Blessed Day of Nikah!",
-    venue_tag: "Ceremony Location",
-    venue_section_title: "The Wedding Venue",
-    venue_desc: "We eagerly await welcoming you to share in our celebration at this beautiful destination.",
-    btn_maps: "Open in Google Maps",
+    btn_maps: "Get Directions",
     btn_copy_addr: "Copy Address",
     addr_toast: "Venue address copied to clipboard!",
-    quote_tag: "Divine Guidance & Wisdom",
-    quote_title: "Words of Tranquility",
+    final_tag: "Blessings & Heartfelt Dua",
+    final_title: "A Covenant of Love & Faith",
     quran_translation: "\"And among His signs is that He created for you mates from among yourselves, that you may dwell in tranquility with them; and He has put love and mercy between your hearts.\"",
     quran_citation: "— Surah Ar-Rum [30:21] —",
     dua_meaning: "\"May Allah bless you, bestow His blessings upon you, and join you together in goodness and harmony.\"",
-    family_tag: "With the Blessings of Our Elders",
-    family_title: "The Respected Families",
-    family_desc: "With prayers in our hearts and gratitude to the Almighty, our families cordially welcome your gracious presence.",
-    family_bride_side: "Bride's Parents",
-    family_bride_rel: "Cordially request your warm presence and blessings",
-    family_groom_side: "Groom's Parents",
-    family_groom_rel: "Cordially invite you to celebrate this blessed covenant",
-    family_invitation_msg: "\"Your presence and warm prayers will illuminate our celebration and bring abundant joy to our union.\"",
-    final_tag: "Heartfelt Welcome",
-    final_title: "A Covenant of Love & Faith",
     final_quote: "\"As we step forward onto this sacred path of companionship, your presence, warm smiles, and sincere duas are the most precious gifts we could cherish.\"",
     guestbook_title: "Leave Your Dua for the Couple",
     guestbook_sub: "Send a prayer or warm message to Faizra & Mohamed Sheik Ismail",
@@ -86,35 +82,44 @@ const i18n = {
     dua_sent_toast: "Jazakallah Khair! Your Dua has been placed in our guestbook.",
     dua_val_error: "Please enter your name and heartfelt Dua.",
     btn_share_wa: "Share Invitation via WhatsApp",
-    btn_view_venue: "View Venue Directions",
-    footer_copy: "Faizra & Mohamed Sheik Ismail • 24 December 2026 • Richway Garden, Katheeja"
+    btn_wa_rsvp: "Send Wishes on WhatsApp",
+    footer_copy: "Faiz Weds Sheik • 24 December 2026 • Richway Garden, Khadeja Mahal"
   },
   ta: {
     music_play: "இசை ஒலிக்க",
     music_playing: "இசை ஒலிக்கிறது",
     music_toast_start: "மெல்லிய பின்னணி இசை தொடங்கியது",
     music_toast_pause: "இசை நிறுத்தப்பட்டது",
-    envelope_subtitle: "திருமண அழைப்பிதழ்",
-    bride_name: "ஏ. ஃபைஸ்ரா",
-    groom_name: "ஆர். முகமது ஷேக் இஸ்மாயில்",
-    envelope_date_preview: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • கதீஜா",
-    envelope_tap_hint: "அழைப்பிதழைத் திறக்க பொன் முத்திரையைத் தொடவும்",
     bismillah_trans: "\"அளவற்ற அருளாளனும், நிகரற்ற அன்புடையோனுமாகிய அல்லாஹ்வின் திருப்பெயரால்\"",
     hero_proclamation: "புனித நிக்காஹ் பெருவிழா",
-    hero_title: "நிக்காஹ் அழைப்பிதழ்",
-    hero_announcement: "எல்லாம் வல்ல <strong>அல்லாஹ்வின் (சுபஹானஹு வதஆலா)</strong> பேரருளாலும், எங்கள் பெற்றோர்கள் மற்றும் பெரியோர்களின் நல்லாசிகளுடனும், எங்கள் அன்புச் செல்வங்களின் நிக்காஹ் நன்நாளில் தாங்கள் தங்கள் குடும்ப சகிதமாக வருகை தந்து வாழ்த்தி துஆ செய்யுமாறு அன்புடன் அழைக்கின்றோம்.",
-    couple_tag: "மணமக்கள்",
+    hero_title: "ஃபைஸ்ரா - ஷேக் திருமணம்",
+    hero_announcement: "எல்லாம் வல்ல <strong>அல்லாஹ்வின் (சுபஹானஹு வதஆலா)</strong> பேரருளாலும், எங்கள் பெற்றோர்கள் மற்றும் பெரியோர்களின் நல்லாசிகளுடனும், எங்கள் அன்புச் செல்வங்களின் புனித நிக்காஹ் நன்நாளில் தாங்கள் தங்கள் குடும்ப சகிதமாக வருகை தந்து வாழ்த்தி துஆ செய்யுமாறு அன்புடன் அழைக்கின்றோம்.",
+    scratch_instruction: "எங்கள் இனிய நன்னாளைக் காண உராயவும்",
+    scratch_revealed_names: "ஏ. ஃபைஸ்ரா & ஆர். முகமது ஷேக் இஸ்மாயில்",
+    scratch_revealed_sub: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா மஹால்",
+    scratch_revealed_badge: "புனித நிக்காஹ் பந்தம்",
+    btn_scratch_reveal: "✦ நன்னாளை உடனே திறக்க இங்கு தொடவும் ✦",
+    music_choice_prompt: "அழைப்பிதழைப் பார்க்கும்போது மெல்லிய பின்னணி இசையை ஒலிக்கச் செய்ய விரும்புகிறீர்களா?",
+    btn_play_music: "இசை ஒலிக்க",
+    btn_no_thanks: "வேண்டாம்",
+    couple_tag: "மணமக்கள் மற்றும் இருவீட்டார்",
     couple_title: "ஈருடல் ஓருயிராய் இணையும் நன்னாள்",
     couple_desc: "கருணையும் அன்பும் நிறைந்த இல்லறப் பயணத்தில், நபிகள் நாயகம் ﷺ அவர்களின் சுன்னத் வழியில் தொடங்கும் இனிய வாழ்வு.",
     bride_role: "மணமகள்",
+    bride_name: "ஏ. ஃபைஸ்ரா",
     bride_parents_title: "அன்பு மகள்",
     bride_parents: "ஜனாப் K.M. அகமது அலி<br>&amp; A. ஹஜ்ரீன் பேகம்",
     groom_role: "மணமகன்",
+    groom_name: "ஆர். முகமது ஷேக் இஸ்மாயில்",
     groom_parents_title: "அன்பு மகன்",
     groom_parents: "(மறைந்த) திரு. M. ரஹ்மத்துல்லா<br>&amp; திருமதி. R. பர்சானா பேகம்",
-    event_tag: "சுப முகூர்த்தம்",
+    family_bride_side: "மணமகள் பெற்றோர்",
+    family_bride_rel: "தங்களின் வருகையையும் நல்வாழ்த்துகளையும் வேண்டி விரும்பி அழைக்கின்றனர்",
+    family_groom_side: "மணமகன் பெற்றோர்",
+    family_groom_rel: "இந்த இனிய நிக்காஹ் வைபவத்திற்கு தங்களை அன்புடன் அழைக்கின்றனர்",
+    family_invitation_msg: "\"தங்களின் மேலான வருகையும் உளமார்ந்த துஆக்களும் எங்கள் விழாவிற்கு பெருமை சேர்க்கும்.\"",
+    event_tag: "புனித வைபவம்",
     event_title: "நிக்காஹ் வைபவ விபரம்",
-    event_desc: "இறைவனின் திருப்பெயரால் நிகழும் இந்த புனித நிக்காஹ் நிகழ்வில் கலந்து கொண்டு சிறப்பிக்க வேண்டுகிறோம்.",
     card_day_date_label: "நாளும் தேதியும்",
     card_day_val: "வியாழக்கிழமை",
     card_date_val: "24 டிசம்பர் 2026",
@@ -122,41 +127,28 @@ const i18n = {
     card_time_val: "காலை 10:30 மணி",
     card_time_sub: "காலை சுப முகூர்த்தம்",
     card_venue_label: "இடம்",
-    venue_name: "ரிச்வே கார்டன்",
-    venue_location: "கதீஜா",
+    venue_name_full: "ரிச்வே கார்டன், கதீஜா மஹால்",
+    venue_sub_location: "பட்டுக்கோட்டை - அதிரை ரோடு, அதிராம்பட்டினம்",
     venue_timing_badge: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • காலை 10:30 மணி முதல்",
     btn_gcal: "கூகுள் காலண்டரில் சேர்க்க",
     btn_ics: "காலண்டர் கோப்பு (.ics)",
-    countdown_tag: "நேரக் கணக்கீடு",
-    countdown_title: "இனிய நன்னாளிற்கான காத்திருப்பு",
-    countdown_desc: "வியாழக்கிழமை, 24 டிசம்பர் 2026 காலை 10:30 மணியை நோக்கி நெஞ்சார்ந்த ஆவலுடன்...",
+    venue_countdown_tag: "திருமண மண்டபம் & நேரக் கணக்கீடு",
+    venue_section_title: "திருமண நிகழ்விடம் & நேரக் கணக்கீடு",
+    venue_desc: "வியாழக்கிழமை, 24 டிசம்பர் 2026 காலை 10:30 மணியளவில் எங்கள் இல்லத் திருமண விழாவிற்கு தங்களை இன்முகத்துடன் வரவேற்கக் காத்திருக்கின்றோம்.",
     count_days: "நாட்கள்",
     count_hours: "மணி",
     count_minutes: "நிமிடம்",
     count_seconds: "வினாடி",
     countdown_status: "இன்ஷா அல்லாஹ், நிக்காஹ் நன்நாளை எதிர்நோக்கி...",
     countdown_today: "அல்ஹம்துலில்லாஹ், இன்று எங்களின் புனித நிக்காஹ் நன்னாள்!",
-    venue_tag: "திருமண மண்டபம்",
-    venue_section_title: "திருமண நிகழ்விடம்",
-    venue_desc: "எங்கள் இல்லத் திருமண விழாவிற்கு தங்களை இன்முகத்துடன் வரவேற்கக் காத்திருக்கின்றோம்.",
-    btn_maps: "கூகுள் வரைபடத்தில் பார்க்க",
+    btn_maps: "வழிகாட்டுதல் பெற",
     btn_copy_addr: "முகவரியை நகலெடுக்க",
     addr_toast: "மண்டப முகவரி நகலெடுக்கப்பட்டது!",
-    quote_tag: "திருக்குர்ஆன் வழிகாட்டல்",
-    quote_title: "சாந்தியும் அன்பும் தரும் அருள்வாக்கு",
+    final_tag: "நல்வாழ்த்துகளும் துஆவும்",
+    final_title: "அன்பும் நம்பிக்கையும் இணையும் பந்தம்",
     quran_translation: "\"நீங்கள் அமைதி பெற உங்களுக்காக உங்கள் இனத்திலிருந்தே மனைவியரை உண்டாக்கி, உங்களுக்கிடையே அன்பையும் கருணையையும் ஏற்படுத்தியிருப்பது அவனது அத்தாட்சிகளில் உள்ளதாகும்.\"",
     quran_citation: "— திருக்குர்ஆன், சூரா அர்-ரூம் [30:21] —",
     dua_meaning: "\"அல்லாஹ் உங்களுக்கு பரக்கத் செய்யட்டும், உங்கள் மீது தன் அருளைப் பொழியட்டும், உங்கள் இருவரையும் நன்மையில் ஒன்றிணைக்கட்டும்.\"",
-    family_tag: "பெரியோர்களின் நல்லாசியுடன்",
-    family_title: "இருவீட்டார் அழைப்பு",
-    family_desc: "அல்லாஹ்வின் பேரருளுக்கு நன்றி செலுத்தி, எங்கள் இரு குடும்பத்தாரும் தங்களை மனதார வரவேற்கின்றோம்.",
-    family_bride_side: "மணமகள் பெற்றோர்",
-    family_bride_rel: "தங்களின் வருகையையும் நல்வாழ்த்துகளையும் வேண்டி விரும்பி அழைக்கின்றனர்",
-    family_groom_side: "மணமகன் பெற்றோர்",
-    family_groom_rel: "இந்த இனிய நிக்காஹ் வைபவத்திற்கு தங்களை அன்புடன் அழைக்கின்றனர்",
-    family_invitation_msg: "\"தங்களின் மேலான வருகையும் உளமார்ந்த துஆக்களும் எங்கள் விழாவிற்கு பெருமை சேர்க்கும்.\"",
-    final_tag: "இதயம் கனிந்த வரவேற்பு",
-    final_title: "அன்பும் நம்பிக்கையும் இணையும் பந்தம்",
     final_quote: "\"புதிய வாழ்க்கைப் பாதையைத் தொடங்கும் இந்நாளில், தங்களின் பொன்னான வருகையும், இனிய புன்னகையும், தூய துஆவுமே எங்களுக்குக் கிடைக்கும் மாபெரும் பரிசாகும்.\"",
     guestbook_title: "மணமக்களுக்கு உங்கள் துஆவை அளியுங்கள்",
     guestbook_sub: "ஃபைஸ்ரா மற்றும் முகமது ஷேக் இஸ்மாயில் தம்பதியருக்கு உங்கள் வாழ்த்தை அனுப்புங்கள்",
@@ -166,35 +158,44 @@ const i18n = {
     dua_sent_toast: "ஜஸாக்கல்லாஹு கைர்! உங்கள் துஆ பதிவு செய்யப்பட்டது.",
     dua_val_error: "தயவுசெய்து உங்கள் பெயரையும் துஆவையும் உள்ளிடவும்.",
     btn_share_wa: "வாட்ஸ்அப் மூலம் பகிரவும்",
-    btn_view_venue: "மண்டப வழியைக் காண",
-    footer_copy: "ஃபைஸ்ரா & முகமது ஷேக் இஸ்மாயில் • 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா"
+    btn_wa_rsvp: "வாட்ஸ்அப்பில் வாழ்த்துக்கள் தெரிவிக்க",
+    footer_copy: "ஃபைஸ்ரா - ஷேக் திருமணம் • 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா மஹால்"
   },
   ar: {
     music_play: "تشغيل الموسيقى",
     music_playing: "الموسيقى تعمل",
     music_toast_start: "بدأت النغمات الهادئة",
     music_toast_pause: "تم إيقاف الموسيقى",
-    envelope_subtitle: "دعوة زفاف إسلامية ملكية",
-    bride_name: "أ. فائزة",
-    groom_name: "ر. محمد شيخ إسماعيل",
-    envelope_date_preview: "الخميس، 24 ديسمبر 2026 • خديجة",
-    envelope_tap_hint: "اضغط على الختم الذهبي لفتح الدعوة",
     bismillah_trans: "\"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\"",
     hero_proclamation: "مراسم عقد القران المبارك",
-    hero_title: "حفل عقد النكاح",
-    hero_announcement: "بفضل <strong>الله تعالى</strong> وتوفيقه، وببركة دعاء الوالدين والأهل، يسرنا ويشرفنا دعوتكم لحضور ومباركة عقد قران ابنتنا وابننا العزيزين.",
-    couple_tag: "العروسان المباركان",
+    hero_title: "عقد قران فائزة & شيخ",
+    hero_announcement: "بفضل <strong>الله تعالى</strong> وتوفيقه، وببركة دعاء الوالدين والأهل الكرام، نتشرف بدعوتكم لحضور ومباركة مراسم عقد قران ابنتنا وابننا العزيزين ومشاركتنا فرحتنا.",
+    scratch_instruction: "امسح البطاقة للكشف عن موعدنا المميز",
+    scratch_revealed_names: "أ. فائزة & ر. محمد شيخ إسماعيل",
+    scratch_revealed_sub: "الخميس، 24 ديسمبر 2026 • ريتشواي جاردن، خديجة محل",
+    scratch_revealed_badge: "ميثاق غليظ مبارك",
+    btn_scratch_reveal: "✦ اضغط للكشف الفوري عن التفاصيل ✦",
+    music_choice_prompt: "هل ترغب في الاستماع إلى النغمات الهادئة أثناء تصفح الدعوة؟",
+    btn_play_music: "تشغيل الموسيقى",
+    btn_no_thanks: "لا، شكراً",
+    couple_tag: "العروسان المباركان والعائلتان",
     couple_title: "روحان يجمعهما الإيمان والمودة",
     couple_desc: "انطلاقة في رحلة العمر في ظل السكينة والمودة والرحمة وعلى هدي وسنة نبينا محمد ﷺ.",
     bride_role: "العروس",
+    bride_name: "أ. فائزة",
     bride_parents_title: "الكريمة المصونة لـ",
     bride_parents: "جناب ك.م. أحمد علي<br>&amp; أ. حجرين بيكم",
     groom_role: "العريس",
+    groom_name: "ر. محمد شيخ إسماعيل",
     groom_parents_title: "النجل الكريم لـ",
     groom_parents: "(المرحوم) السيد م. رحمة الله<br>&amp; السيدة ر. برسانة بيكم",
+    family_bride_side: "والدا العروس",
+    family_bride_rel: "يتشرفان بطلب حضوركم ومباركتكم الكريمة",
+    family_groom_side: "والدا العريس",
+    family_groom_rel: "يدعوانكم بكل سرور ومحبة لمشاركتنا فرحة هذا الميثاق الغليظ",
+    family_invitation_msg: "\"حضوركم الطيب ودعواتكم المباركة يضيئان حفلنا ويملآن قلوبنا سعادة وابتهاجاً.\"",
     event_tag: "الموعد المبارك",
-    event_title: "تفاصيل عقد القران",
-    event_desc: "نتشرف بوجودكم ودعواتكم الصادقة لتشاركونا فرحتنا في هذه المناسبة الميمونة.",
+    event_title: "مراسم عقد القران",
     card_day_date_label: "اليوم والتاريخ",
     card_day_val: "الخميس",
     card_date_val: "24 ديسمبر 2026",
@@ -202,41 +203,28 @@ const i18n = {
     card_time_val: "10:30 صباحاً",
     card_time_sub: "مراسم الصباح",
     card_venue_label: "مكان الحفل",
-    venue_name: "ريتشواي جاردن",
-    venue_location: "خديجة",
+    venue_name_full: "ريتشواي جاردن، خديجة محل",
+    venue_sub_location: "طريق باتوكوتاي - أديراي، أديزامباتينام",
     venue_timing_badge: "الخميس، 24 ديسمبر 2026 • ابتداءً من 10:30 صباحاً",
     btn_gcal: "إضافة إلى تقويم Google",
     btn_ics: "تحميل ملف التقويم (.ics)",
-    countdown_tag: "العد التنازلي",
-    countdown_title: "نعد اللحظات حتى اليوم المبارك",
-    countdown_desc: "بقلوب يملؤها الشوق لموعدنا يوم الخميس 24 ديسمبر 2026 الساعة 10:30 صباحاً.",
+    venue_countdown_tag: "موقع الحفل والعد التنازلي",
+    venue_section_title: "قاعة الزفاف والعد التنازلي",
+    venue_desc: "نتطلع ببالغ الشوق والسرور لاستقبالكم ومشاركتنا أبهج اللحظات في هذه القاعة المباركة يوم الخميس 24 ديسمبر 2026 الساعة 10:30 صباحاً.",
     count_days: "يوم",
     count_hours: "ساعة",
     count_minutes: "دقيقة",
     count_seconds: "ثانية",
     countdown_status: "حتى نقول 'قبلت النكاح' إن شاء الله",
     countdown_today: "الحمد لله، اليوم هو يوم عقد القران المبارك!",
-    venue_tag: "موقع الحفل",
-    venue_section_title: "قاعة الزفاف",
-    venue_desc: "نتطلع ببالغ الشوق والسرور لاستقبالكم ومشاركتنا أبهج اللحظات في هذه القاعة المباركة.",
-    btn_maps: "فتح في خرائط Google",
+    btn_maps: "الحصول على الاتجاهات",
     btn_copy_addr: "نسخ العنوان",
     addr_toast: "تم نسخ عنوان القاعة بنجاح!",
-    quote_tag: "الهدي القرآني",
-    quote_title: "آيات السكينة والمودة",
+    final_tag: "البركة والدعاء الصادق",
+    final_title: "ميثاق غليظ بالمودة والإيمان",
     quran_translation: "\"وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً\"",
     quran_citation: "— سورة الروم [30:21] —",
     dua_meaning: "\"«بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ»\"",
-    family_tag: "ببركة أهالينا الكرام",
-    family_title: "العائلتان الكريمتان",
-    family_desc: "بقلوب تلهج بالشكر لله تعالى، ترحب عائلاتنا الكريمة بحضوركم المبارك ومشاركتنا الفرحة.",
-    family_bride_side: "والدا العروس",
-    family_bride_rel: "يتشرفان بطلب حضوركم ومباركتكم الكريمة",
-    family_groom_side: "والدا العريس",
-    family_groom_rel: "يدعوانكم بكل سرور ومحبة لمشاركتنا فرحة هذا الميثاق الغليظ",
-    family_invitation_msg: "\"حضوركم الطيب ودعواتكم المباركة يضيئان حفلنا ويملآن قلوبنا سعادة وابتهاجاً.\"",
-    final_tag: "أهلاً وسهلاً بكم",
-    final_title: "ميثاق غليظ بالمودة والإيمان",
     final_quote: "\"ونحن نخطو معاً أولى خطواتنا في هذا الدرب الطاهر، فإن تشريفكم ودعواتكم الصادقة هي أغلى وأجمل ما نحظى به.\"",
     guestbook_title: "أرسل دعاءك ومباركتك للعروسين",
     guestbook_sub: "شارك فائزة ومحمد شيخ إسماعيل بأطيب الدعوات والتهاني",
@@ -246,8 +234,8 @@ const i18n = {
     dua_sent_toast: "جزاكم الله خيراً! تم تسجيل دعائكم المبارك.",
     dua_val_error: "يرجى إدخال الاسم والدعاء المبارك.",
     btn_share_wa: "مشاركة الدعوة عبر واتساب",
-    btn_view_venue: "عرض اتجاهات القاعة",
-    footer_copy: "فائزة & محمد شيخ إسماعيل • 24 ديسمبر 2026 • ريتشواي جاردن، خديجة"
+    btn_wa_rsvp: "إرسال التهاني عبر واتساب",
+    footer_copy: "فائزة & شيخ • 24 ديسمبر 2026 • ريتشواي جاردن، خديجة محل"
   }
 };
 
@@ -258,11 +246,12 @@ let currentLanguage = 'en';
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
-  initEnvelopeOpener();
   initParticleCanvas();
   initCountdownTimer();
+  initScratchCard();
   initAudioSystem();
   initCalendarAndMapActions();
+  initWhatsAppButton();
   initDuaGuestbook();
   initScrollAnimations();
 });
@@ -278,10 +267,8 @@ function initLanguageSwitcher() {
 
   tabs.forEach((tab) => {
     tab.addEventListener('click', () => {
-      const selected = tab.getAttribute('data-lang');
-      if (selected && selected !== currentLanguage) {
-        setLanguage(selected);
-      }
+      const lang = tab.getAttribute('data-lang');
+      setLanguage(lang);
     });
   });
 }
@@ -291,10 +278,9 @@ function setLanguage(lang) {
   currentLanguage = lang;
   localStorage.setItem('wedding_lang', lang);
 
-  const html = document.documentElement;
   const dict = i18n[lang];
+  const html = document.documentElement;
 
-  // Set RTL or LTR
   if (lang === 'ar') {
     html.setAttribute('dir', 'rtl');
     html.setAttribute('lang', 'ar');
@@ -353,52 +339,233 @@ function setLanguage(lang) {
 }
 
 function updateDynamicLinks(lang) {
-  const dict = i18n[lang];
+  const dict = i18n[lang] || i18n.en;
   const gcalBtn = document.getElementById('add-gcal-btn');
   if (gcalBtn) {
     const title = encodeURIComponent(
       lang === 'ar' ? 'عقد قران: فائزة & محمد شيخ إسماعيل' :
       lang === 'ta' ? 'நிக்காஹ் வைபவம்: ஃபைஸ்ரா & முகமது ஷேக் இஸ்மாயில்' :
-      'Nikah Ceremony: Faizra & Mohamed Sheik Ismail'
+      'Nikah Ceremony: A. Faizra & R. Mohamed Sheik Ismail (Faiz Weds Sheik)'
     );
     const details = encodeURIComponent(
-      `${dict.hero_announcement.replace(/<[^>]*>?/gm, '')}\n\nVenue: ${dict.venue_name}, ${dict.venue_location}`
+      `Under the divine benevolence of Allah (SWT), you are warmly invited to the Nikah of A. Faizra & R. Mohamed Sheik Ismail on Thursday, 24 December 2026 at 10:30 AM.\n\nVenue: ${dict.venue_name_full}`
     );
-    const location = encodeURIComponent(`${dict.venue_name}, ${dict.venue_location}`);
+    const location = encodeURIComponent('Richway Garden, Khadeja Mahal, Adirampattinam, Tamil Nadu 614701');
     const dates = '20261224T050000Z/20261224T090000Z';
     gcalBtn.href = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${dates}&details=${details}&location=${location}`;
   }
 }
 
 /* ==========================================================================
-   1. ENVELOPE / WAX SEAL OPENING
+   1. INTERACTIVE SCRATCH CARD WITH TOUCH & MOUSE SUPPORT
    ========================================================================== */
-function initEnvelopeOpener() {
-  const envelopeOverlay = document.getElementById('envelope-overlay');
-  const waxSealBtn = document.getElementById('wax-seal-btn');
+function initScratchCard() {
+  const canvas = document.getElementById('scratch-canvas');
+  const container = document.getElementById('scratch-card-box');
+  const fallbackBtn = document.getElementById('scratch-reveal-btn');
+  const musicChoiceCard = document.getElementById('music-choice-container');
 
-  if (!envelopeOverlay || !waxSealBtn) return;
+  if (!canvas || !container) return;
+  const ctx = canvas.getContext('2d');
 
-  function openEnvelope() {
-    envelopeOverlay.classList.add('opened');
-    triggerGoldSparkleBurst();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  let isDrawing = false;
+  let isRevealed = false;
+  let totalPixels = 0;
+  let clearedPixels = 0;
+
+  function resizeCanvas() {
+    const rect = container.getBoundingClientRect();
+    canvas.width = rect.width;
+    canvas.height = rect.height;
+    totalPixels = canvas.width * canvas.height;
+    drawScratchCover();
   }
 
-  waxSealBtn.addEventListener('click', openEnvelope);
-  waxSealBtn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      openEnvelope();
+  function drawScratchCover() {
+    if (isRevealed) return;
+    const w = canvas.width;
+    const h = canvas.height;
+
+    // Deep Royal Sapphire Blue Base
+    const gradient = ctx.createLinearGradient(0, 0, w, h);
+    gradient.addColorStop(0, '#0a214d');
+    gradient.addColorStop(0.5, '#071736');
+    gradient.addColorStop(1, '#020814');
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, w, h);
+
+    // Elegant Islamic Gold Pattern & Geometric Diamond Motifs
+    ctx.save();
+    ctx.strokeStyle = 'rgba(223, 183, 108, 0.22)';
+    ctx.lineWidth = 1.2;
+    const step = 32;
+    for (let x = 0; x < w + step; x += step) {
+      for (let y = 0; y < h + step; y += step) {
+        ctx.beginPath();
+        ctx.moveTo(x, y - 10);
+        ctx.lineTo(x + 10, y);
+        ctx.lineTo(x, y + 10);
+        ctx.lineTo(x - 10, y);
+        ctx.closePath();
+        ctx.stroke();
+      }
+    }
+
+    // Gold Border Frame
+    ctx.strokeStyle = '#dfb76c';
+    ctx.lineWidth = 3;
+    ctx.strokeRect(6, 6, w - 12, h - 12);
+
+    ctx.strokeStyle = 'rgba(247, 232, 189, 0.4)';
+    ctx.lineWidth = 1;
+    ctx.strokeRect(12, 12, w - 24, h - 24);
+
+    // Scratch Cover Center Proclamation
+    ctx.fillStyle = '#dfb76c';
+    ctx.font = 'bold 22px "Cinzel Decorative", Georgia, serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('Faiz Weds Sheik', w / 2, h / 2 - 18);
+
+    ctx.fillStyle = '#f7e8bd';
+    ctx.font = '13px Montserrat, sans-serif';
+    ctx.fillText('✦ Scratch or Tap to Reveal ✦', w / 2, h / 2 + 18);
+    ctx.restore();
+  }
+
+  resizeCanvas();
+  window.addEventListener('resize', () => {
+    if (!isRevealed) {
+      resizeCanvas();
     }
   });
-}
 
-function triggerGoldSparkleBurst() {
-  const canvas = document.getElementById('gold-dust-canvas');
-  if (!canvas) return;
-  if (window.particleSystem) {
-    window.particleSystem.burst();
+  function getPointerPos(e) {
+    const rect = canvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return {
+      x: clientX - rect.left,
+      y: clientY - rect.top
+    };
+  }
+
+  function scratch(pos) {
+    if (isRevealed) return;
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.beginPath();
+    ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+    ctx.fill();
+
+    checkProgressDebounced();
+  }
+
+  let progressCheckTimer = null;
+  function checkProgressDebounced() {
+    if (progressCheckTimer) return;
+    progressCheckTimer = setTimeout(() => {
+      progressCheckTimer = null;
+      checkRevealProgress();
+    }, 150);
+  }
+
+  function checkRevealProgress() {
+    if (isRevealed) return;
+    try {
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      let transparentCount = 0;
+      const stride = 16; // Sample every 16th pixel for high performance
+
+      for (let i = 3; i < data.length; i += 4 * stride) {
+        if (data[i] === 0) {
+          transparentCount++;
+        }
+      }
+
+      const ratio = transparentCount / (data.length / (4 * stride));
+      if (ratio > 0.38) {
+        completeReveal();
+      }
+    } catch (e) {
+      // In case of any canvas security error, reveal smoothly
+      completeReveal();
+    }
+  }
+
+  function completeReveal() {
+    if (isRevealed) return;
+    isRevealed = true;
+    canvas.classList.add('fade-out');
+
+    if (fallbackBtn) {
+      fallbackBtn.style.display = 'none';
+    }
+
+    triggerGoldSparkleBurst();
+
+    if (musicChoiceCard) {
+      musicChoiceCard.classList.add('visible');
+    }
+  }
+
+  // Pointer & Touch Events
+  canvas.addEventListener('mousedown', (e) => {
+    isDrawing = true;
+    scratch(getPointerPos(e));
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDrawing) return;
+    scratch(getPointerPos(e));
+  });
+
+  window.addEventListener('mouseup', () => {
+    isDrawing = false;
+  });
+
+  canvas.addEventListener('touchstart', (e) => {
+    isDrawing = true;
+    scratch(getPointerPos(e));
+  }, { passive: true });
+
+  canvas.addEventListener('touchmove', (e) => {
+    if (!isDrawing) return;
+    scratch(getPointerPos(e));
+  }, { passive: true });
+
+  window.addEventListener('touchend', () => {
+    isDrawing = false;
+  });
+
+  // Accessible Fallback Reveal Button
+  if (fallbackBtn) {
+    fallbackBtn.addEventListener('click', completeReveal);
+  }
+
+  // Music Choice Buttons (Play Music vs No Thanks)
+  const playMusicBtn = document.getElementById('choice-play-music');
+  const noThanksBtn = document.getElementById('choice-no-thanks');
+
+  if (playMusicBtn) {
+    playMusicBtn.addEventListener('click', () => {
+      window.startWeddingMusic();
+      musicChoiceCard.classList.remove('visible');
+      setTimeout(() => {
+        musicChoiceCard.style.display = 'none';
+      }, 600);
+    });
+  }
+
+  if (noThanksBtn) {
+    noThanksBtn.addEventListener('click', () => {
+      const dict = i18n[currentLanguage] || i18n.en;
+      showToast(dict.music_toast_pause || 'Enjoy the wedding invitation!');
+      musicChoiceCard.classList.remove('visible');
+      setTimeout(() => {
+        musicChoiceCard.style.display = 'none';
+      }, 600);
+    });
   }
 }
 
@@ -450,23 +617,23 @@ function initParticleCanvas() {
         if (this.opacity <= 0.15) this.fadeIn = true;
       }
 
-      if (this.y < -15 || this.x < -15 || this.x > width + 15) {
-        this.reset();
+      if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+        this.reset(false);
       }
     }
 
     draw() {
       ctx.save();
+      ctx.globalAlpha = this.opacity;
+      ctx.fillStyle = '#f7e8bd';
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
 
       if (this.glow) {
         ctx.shadowBlur = 8;
-        ctx.shadowColor = 'rgba(235, 216, 159, 0.85)';
+        ctx.shadowColor = '#dfb76c';
       }
-
-      ctx.fillStyle = `rgba(235, 216, 159, ${this.opacity})`;
-      ctx.fill();
       ctx.restore();
     }
   }
@@ -476,13 +643,15 @@ function initParticleCanvas() {
   }
 
   window.particleSystem = {
-    burst: () => {
-      for (let i = 0; i < 30; i++) {
+    burst() {
+      for (let i = 0; i < 40; i++) {
         const p = new Particle();
         p.x = width / 2 + (Math.random() - 0.5) * 200;
-        p.y = height / 2 + (Math.random() - 0.5) * 200;
+        p.y = height / 3 + (Math.random() - 0.5) * 200;
         p.speedY = (Math.random() - 0.5) * 3;
         p.speedX = (Math.random() - 0.5) * 3;
+        p.size = Math.random() * 3 + 1.5;
+        p.opacity = 1;
         particles.push(p);
       }
     }
@@ -490,23 +659,27 @@ function initParticleCanvas() {
 
   function animate() {
     ctx.clearRect(0, 0, width, height);
-    for (let i = 0; i < particles.length; i++) {
-      particles[i].update();
-      particles[i].draw();
-    }
-    if (particles.length > particleCount + 5) {
-      particles.shift();
-    }
+    particles.forEach((p) => {
+      p.update();
+      p.draw();
+    });
     requestAnimationFrame(animate);
   }
 
   animate();
 }
 
+function triggerGoldSparkleBurst() {
+  if (window.particleSystem) {
+    window.particleSystem.burst();
+  }
+}
+
 /* ==========================================================================
-   3. LIVE COUNTDOWN TO 24 DECEMBER 2026, 10:30 AM
+   3. LIVE COUNTDOWN TO THURSDAY, 24 DECEMBER 2026, 10:30 AM
    ========================================================================== */
 function initCountdownTimer() {
+  // Thursday, 24 December 2026 at 10:30 AM (Asia/Kolkata +05:30)
   const targetDate = new Date('2026-12-24T10:30:00+05:30').getTime();
 
   const daysEl = document.getElementById('count-days');
@@ -549,30 +722,19 @@ function initCountdownTimer() {
 }
 
 /* ==========================================================================
-   4. ROYAL AMBIENT MUSIC SYSTEM (Non-autoplay, Gentle Acoustic/Oud Harmony)
+   4. ROYAL AMBIENT MUSIC SYSTEM (Non-autoplay, Explicit Choice / Toggle)
    ========================================================================== */
 function initAudioSystem() {
   const musicToggleBtn = document.getElementById('music-toggle-btn');
   const musicBtnText = document.getElementById('music-btn-text');
-  if (!musicToggleBtn) return;
+  const audioElement = document.getElementById('wedding-audio');
 
   let isPlaying = false;
   let audioCtx = null;
   let synthInterval = null;
   let masterGain = null;
 
-  // Pentatonic Oud & Harp ambient scale (D, E, F#, A, B)
-  const notes = [
-    146.83, // D3
-    220.00, // A3
-    293.66, // D4
-    329.63, // E4
-    369.99, // F#4
-    440.00, // A4
-    493.88, // B4
-    587.33  // D5
-  ];
-
+  // Synthesized pentatonic oud/harp ambient harmony (works without external mp3 file)
   function playNote(freq, time, duration = 3.5) {
     if (!audioCtx) return;
     const osc = audioCtx.createOscillator();
@@ -593,6 +755,15 @@ function initAudioSystem() {
   }
 
   function startAtmosphere() {
+    // If an external audio file is supplied and playable, use it; otherwise fallback to rich WebAudio synthesis
+    if (audioElement && audioElement.readyState >= 2 && !audioElement.error) {
+      audioElement.play().catch(() => startSynthHarmony());
+    } else {
+      startSynthHarmony();
+    }
+  }
+
+  function startSynthHarmony() {
     if (!audioCtx) {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtx = new AudioContext();
@@ -629,6 +800,9 @@ function initAudioSystem() {
   }
 
   function stopAtmosphere() {
+    if (audioElement && !audioElement.paused) {
+      audioElement.pause();
+    }
     if (synthInterval) {
       clearInterval(synthInterval);
       synthInterval = null;
@@ -638,22 +812,43 @@ function initAudioSystem() {
     }
   }
 
-  musicToggleBtn.addEventListener('click', () => {
-    isPlaying = !isPlaying;
-    const dict = i18n[currentLanguage] || i18n.en;
-
-    if (isPlaying) {
-      startAtmosphere();
+  window.startWeddingMusic = function() {
+    if (isPlaying) return;
+    isPlaying = true;
+    startAtmosphere();
+    if (musicToggleBtn) {
       musicToggleBtn.classList.add('music-playing');
-      musicBtnText.textContent = dict.music_playing;
-      showToast(dict.music_toast_start);
-    } else {
-      stopAtmosphere();
-      musicToggleBtn.classList.remove('music-playing');
-      musicBtnText.textContent = dict.music_play;
-      showToast(dict.music_toast_pause);
     }
-  });
+    if (musicBtnText) {
+      const dict = i18n[currentLanguage] || i18n.en;
+      musicBtnText.textContent = dict.music_playing;
+    }
+    showToast(i18n[currentLanguage]?.music_toast_start || "Serene Ambient Harmony Started");
+  };
+
+  window.stopWeddingMusic = function() {
+    if (!isPlaying) return;
+    isPlaying = false;
+    stopAtmosphere();
+    if (musicToggleBtn) {
+      musicToggleBtn.classList.remove('music-playing');
+    }
+    if (musicBtnText) {
+      const dict = i18n[currentLanguage] || i18n.en;
+      musicBtnText.textContent = dict.music_play;
+    }
+    showToast(i18n[currentLanguage]?.music_toast_pause || "Music Paused");
+  };
+
+  if (musicToggleBtn) {
+    musicToggleBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        window.stopWeddingMusic();
+      } else {
+        window.startWeddingMusic();
+      }
+    });
+  }
 }
 
 /* ==========================================================================
@@ -664,7 +859,7 @@ function initCalendarAndMapActions() {
   const copyAddressBtn = document.getElementById('copy-address-btn');
   if (copyAddressBtn) {
     copyAddressBtn.addEventListener('click', () => {
-      const address = 'Richway Garden, Katheeja';
+      const address = 'Richway Garden, Khadeja Mahal, Pattukkottai - Adirai Road, Adirampattinam, Tamil Nadu 614701';
       const dict = i18n[currentLanguage] || i18n.en;
       navigator.clipboard.writeText(address).then(() => {
         showToast(dict.addr_toast);
@@ -683,12 +878,12 @@ function initCalendarAndMapActions() {
     });
   }
 
-  // WhatsApp Share Button
+  // WhatsApp Share Invitation Link
   const shareWaBtn = document.getElementById('share-whatsapp-btn');
   if (shareWaBtn) {
     shareWaBtn.addEventListener('click', () => {
-      const dict = i18n[currentLanguage] || i18n.en;
       let text = '';
+      const canonicalUrl = 'https://faizwedssheik.vercel.app/';
 
       if (currentLanguage === 'ar') {
         text = encodeURIComponent(
@@ -700,9 +895,9 @@ function initCalendarAndMapActions() {
           'نجل: (المرحوم) السيد م. رحمة الله & السيدة ر. برسانة بيكم\n\n' +
           '📅 التاريخ: الخميس، 24 ديسمبر 2026\n' +
           '⏰ الوقت: 10:30 صباحاً\n' +
-          '📍 المكان: ريتشواي جاردن، خديجة\n\n' +
+          '📍 المكان: ريتشواي جاردن، خديجة محل\n\n' +
           'حضوركم ودعواتكم الصادقة تشرفنا وتسعدنا!\n\n' +
-          'رابط بطاقة الدعوة الملكية: ' + window.location.href
+          'رابط بطاقة الدعوة الملكية: ' + canonicalUrl
         );
       } else if (currentLanguage === 'ta') {
         text = encodeURIComponent(
@@ -714,29 +909,54 @@ function initCalendarAndMapActions() {
           'செல்வமகன்: (மறைந்த) திரு. M. ரஹ்மத்துல்லா & திருமதி. R. பர்சானா பேகம்\n\n' +
           '📅 நாள்: வியாழக்கிழமை, 24 டிசம்பர் 2026\n' +
           '⏰ நேரம்: காலை 10:30 மணி\n' +
-          '📍 இடம்: ரிச்வே கார்டன், கதீஜா\n\n' +
+          '📍 இடம்: ரிச்வே கார்டன், கதீஜா மஹால்\n\n' +
           'தங்களின் வருகையும் நல்லாசிகளும் எங்கள் இல்லத்திற்கு பெருமை சேர்க்கும்!\n\n' +
-          'அழைப்பிதழைக் காண: ' + window.location.href
+          'அழைப்பிதழைக் காண: ' + canonicalUrl
         );
       } else {
         text = encodeURIComponent(
           '✨ In the Name of Allah, the Most Gracious, the Most Merciful ✨\n\n' +
-          'We cordially invite you to the sacred Nikah Ceremony of:\n\n' +
+          'You are warmly invited to the sacred Nikah Ceremony of:\n\n' +
           '👰 A. Faizra (B.Sc., MCA)\n' +
           'D/o Janab K.M. Ahamed Ali & A. Hajreen Begum\n\n' +
           '🤵 R. Mohamed Sheik Ismail (B.E.)\n' +
           'S/o (Late) Mr. M. Rahumathullah & Mrs. R. Barsana Begum\n\n' +
           '📅 Date: Thursday, 24 December 2026\n' +
           '⏰ Time: 10:30 AM\n' +
-          '📍 Venue: Richway Garden, Katheeja\n\n' +
+          '📍 Venue: Richway Garden, Khadeja Mahal\n\n' +
           'Your presence and prayers will be our greatest blessing!\n\n' +
-          'View the Royal Wedding Card: ' + window.location.href
+          'View the Royal Wedding Card: ' + canonicalUrl
         );
       }
 
       window.open(`https://api.whatsapp.com/send?text=${text}`, '_blank');
     });
   }
+}
+
+/* ==========================================================================
+   WHATSAPP DIRECT BUTTON HANDLER
+   ========================================================================== */
+function initWhatsAppButton() {
+  const directBtn = document.getElementById('direct-whatsapp-btn');
+  if (!directBtn) return;
+
+  // Placeholder phone number configuration (without spaces or plus sign)
+  // If the user hasn't provided a specific phone number, clicking prompts them or opens general WhatsApp compose
+  const configuredPhoneNumber = ""; // Empty string indicates waiting for user configuration
+
+  directBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    const wishText = encodeURIComponent("Assalamu Alaikum! Hearty congratulations on the upcoming Nikah of Faizra & Mohamed Sheik Ismail!");
+
+    if (configuredPhoneNumber && configuredPhoneNumber.trim().length > 5) {
+      const cleanPhone = configuredPhoneNumber.replace(/[^0-9]/g, '');
+      window.open(`https://wa.me/${cleanPhone}?text=${wishText}`, '_blank');
+    } else {
+      // Open general WhatsApp compose with pre-filled message
+      window.open(`https://api.whatsapp.com/send?text=${wishText}`, '_blank');
+    }
+  });
 }
 
 function downloadIcsCalendarFile() {
@@ -751,9 +971,9 @@ function downloadIcsCalendarFile() {
     'DTSTAMP:20260928T120000Z',
     'DTSTART:20261224T050000Z',
     'DTEND:20261224T090000Z',
-    'SUMMARY:Nikah Ceremony: Faizra & Mohamed Sheik Ismail',
+    'SUMMARY:Nikah Ceremony: Faiz Weds Sheik (A. Faizra & R. Mohamed Sheik Ismail)',
     'DESCRIPTION:Solemnization of the Nikah of A. Faizra (B.Sc., MCA) and R. Mohamed Sheik Ismail (B.E.). With prayers from Janab K.M. Ahamed Ali & A. Hajreen Begum and (Late) Mr. M. Rahumathullah & Mrs. R. Barsana Begum.',
-    'LOCATION:Richway Garden, Katheeja',
+    'LOCATION:Richway Garden, Khadeja Mahal',
     'STATUS:CONFIRMED',
     'END:VEVENT',
     'END:VCALENDAR'
@@ -763,7 +983,7 @@ function downloadIcsCalendarFile() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'Nikah_Faizra_and_Ismail_24Dec2026.ics';
+  a.download = 'Nikah_Faiz_Weds_Sheik_24Dec2026.ics';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -793,13 +1013,13 @@ function initDuaGuestbook() {
     {
       name: 'Dear Relatives',
       time: 'Heartfelt Wish',
-      text: 'Hearty congratulations to Faizra and Mohamed Sheik Ismail! Counting down the days to celebrate your Nikah at Richway Garden, Katheeja!'
+      text: 'Hearty congratulations to Faizra and Mohamed Sheik Ismail! Counting down the days to celebrate your Nikah at Richway Garden, Khadeja Mahal!'
     }
   ];
 
   let storedDuas = [];
   try {
-    const raw = localStorage.getItem('faizra_ismail_duas_v3');
+    const raw = localStorage.getItem('faiz_sheik_duas_v4');
     storedDuas = raw ? JSON.parse(raw) : defaultDuas;
   } catch (e) {
     storedDuas = defaultDuas;
@@ -857,7 +1077,7 @@ function initDuaGuestbook() {
 
     storedDuas.unshift(newDua);
     try {
-      localStorage.setItem('faizra_ismail_duas_v3', JSON.stringify(storedDuas));
+      localStorage.setItem('faiz_sheik_duas_v4', JSON.stringify(storedDuas));
     } catch (err) {}
 
     renderDuas();
