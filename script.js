@@ -20,12 +20,17 @@ const i18n = {
     hero_proclamation: "Solemnization of Sacred Matrimony",
     hero_title: "Faiz Weds Sheik",
     hero_announcement: "Under the divine benevolence of <strong>Allah (Subhanahu Wa Ta'ala)</strong> and with heartfelt blessings from our parents and elders, we cordially request the honour of your esteemed presence and dua to witness and celebrate the sacred knot of Nikah.",
+    envelope_subtitle: "Royal Islamic Wedding Invitation",
+    envelope_date_preview: "Thursday, 24 December 2026 • Richway Garden, Khadeja Mahal",
+    envelope_tap_hint: "Click Centre Button to Open Invitation",
+    btn_open_invitation: "Open Invitation",
     scratch_instruction: "Scratch to Reveal Our Special Day",
+    btn_scratch_action: "Scratch to Reveal",
     scratch_revealed_names: "A. Faizra & R. Mohamed Sheik Ismail",
     scratch_revealed_sub: "Thursday, 24 December 2026 • Richway Garden, Khadeja Mahal",
     scratch_revealed_badge: "Blessed Sacred Union",
     btn_scratch_reveal: "✦ Tap to Instantly Reveal Special Day ✦",
-    music_choice_prompt: "Would you like to play the serene ambient wedding melody while viewing?",
+    music_choice_prompt: "Would you like to play “Baraka Allahu Lakuma” while viewing our wedding invitation?",
     btn_play_music: "Play Music",
     btn_no_thanks: "No Thanks",
     couple_tag: "The Blessed Couple & Families",
@@ -97,7 +102,12 @@ const i18n = {
     hero_proclamation: "புனித நிக்காஹ் பெருவிழா",
     hero_title: "ஃபைஸ்ரா - ஷேக் திருமணம்",
     hero_announcement: "எல்லாம் வல்ல <strong>அல்லாஹ்வின் (சுபஹானஹு வதஆலா)</strong> பேரருளாலும், எங்கள் பெற்றோர்கள் மற்றும் பெரியோர்களின் நல்லாசிகளுடனும், எங்கள் அன்புச் செல்வங்களின் புனித நிக்காஹ் நன்நாளில் தாங்கள் தங்கள் குடும்ப சகிதமாக வருகை தந்து வாழ்த்தி துஆ செய்யுமாறு அன்புடன் அழைக்கின்றோம்.",
+    envelope_subtitle: "புனித நிக்காஹ் அழைப்பிதழ்",
+    envelope_date_preview: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா மஹால்",
+    envelope_tap_hint: "அழைப்பிதழைத் திறக்க நடுவிலுள்ள பட்டனை அழுத்தவும்",
+    btn_open_invitation: "அழைப்பிதழைத் திறக்க",
     scratch_instruction: "எங்கள் இனிய நன்னாளைக் காண உராயவும்",
+    btn_scratch_action: "அழைப்பைக் காண உராயவும்",
     scratch_revealed_names: "ஏ. ஃபைஸ்ரா & ஆர். முகமது ஷேக் இஸ்மாயில்",
     scratch_revealed_sub: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா மஹால்",
     scratch_revealed_badge: "புனித நிக்காஹ் பந்தம்",
@@ -174,7 +184,12 @@ const i18n = {
     hero_proclamation: "مراسم عقد القران المبارك",
     hero_title: "عقد قران فائزة & شيخ",
     hero_announcement: "بفضل <strong>الله تعالى</strong> وتوفيقه، وببركة دعاء الوالدين والأهل الكرام، نتشرف بدعوتكم لحضور ومباركة مراسم عقد قران ابنتنا وابننا العزيزين ومشاركتنا فرحتنا.",
+    envelope_subtitle: "دعوة زفاف إسلامية ملكية",
+    envelope_date_preview: "الخميس، 24 ديسمبر 2026 • ريتشواي جاردن، خديجة محل",
+    envelope_tap_hint: "اضغط على الزر في المنتصف لفتح الدعوة",
+    btn_open_invitation: "فتح بطاقة الدعوة",
     scratch_instruction: "امسح البطاقة للكشف عن موعدنا المميز",
+    btn_scratch_action: "امسح للكشف",
     scratch_revealed_names: "أ. فائزة & ر. محمد شيخ إسماعيل",
     scratch_revealed_sub: "الخميس، 24 ديسمبر 2026 • ريتشواي جاردن، خديجة محل",
     scratch_revealed_badge: "ميثاق غليظ مبارك",
@@ -251,6 +266,7 @@ let currentLanguage = 'en';
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
   initLanguageSwitcher();
+  initEnvelopeOpener();
   initParticleCanvas();
   initCountdownTimer();
   initScratchCard();
@@ -362,12 +378,64 @@ function updateDynamicLinks(lang) {
 }
 
 /* ==========================================================================
-   1. INTERACTIVE SCRATCH CARD WITH TOUCH & MOUSE SUPPORT
+   ORIGINAL OPENING SCREEN (First Screen -> Click Centre Button -> Invitation Opens)
+   ========================================================================== */
+function initEnvelopeOpener() {
+  const overlay = document.getElementById('envelope-overlay');
+  const openBtn = document.getElementById('open-invitation-btn');
+  const waxSeal = document.getElementById('wax-seal-btn');
+
+  if (!overlay) return;
+
+  function openEnvelope() {
+    if (overlay.classList.contains('opened')) return;
+    overlay.classList.add('opened');
+
+    // Trigger celebration sparkles
+    if (window.particleSystem && typeof window.particleSystem.burst === 'function') {
+      window.particleSystem.burst();
+    }
+
+    // Scroll to top of main invitation smoothly
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    // Clean up DOM accessibility after transition finishes
+    setTimeout(() => {
+      overlay.style.display = 'none';
+      overlay.setAttribute('aria-hidden', 'true');
+    }, 950);
+  }
+
+  if (openBtn) {
+    openBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openEnvelope();
+    });
+  }
+
+  if (waxSeal) {
+    waxSeal.addEventListener('click', (e) => {
+      e.stopPropagation();
+      openEnvelope();
+    });
+    waxSeal.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openEnvelope();
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   1. INTERACTIVE SCRATCH CARD WITH TOUCH, MOUSE & CENTRE BUTTON SCRATCH
    ========================================================================== */
 function initScratchCard() {
   const canvas = document.getElementById('scratch-canvas');
   const container = document.getElementById('scratch-card-box');
   const fallbackBtn = document.getElementById('scratch-reveal-btn');
+  const centerAction = document.getElementById('scratch-center-action');
+  const centerScratchBtn = document.getElementById('scratch-center-btn');
   const musicChoiceCard = document.getElementById('music-choice-container');
 
   if (!canvas || !container) return;
@@ -375,14 +443,12 @@ function initScratchCard() {
 
   let isDrawing = false;
   let isRevealed = false;
-  let totalPixels = 0;
-  let clearedPixels = 0;
+  let isAutomatedScratching = false;
 
   function resizeCanvas() {
     const rect = container.getBoundingClientRect();
     canvas.width = rect.width;
     canvas.height = rect.height;
-    totalPixels = canvas.width * canvas.height;
     drawScratchCover();
   }
 
@@ -430,11 +496,11 @@ function initScratchCard() {
     ctx.font = 'bold 22px "Cinzel Decorative", Georgia, serif';
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillText('Faiz Weds Sheik', w / 2, h / 2 - 18);
+    ctx.fillText('Faiz Weds Sheik', w / 2, h / 2 - 20);
 
     ctx.fillStyle = '#f7e8bd';
-    ctx.font = '13px Montserrat, sans-serif';
-    ctx.fillText('✦ Scratch or Tap to Reveal ✦', w / 2, h / 2 + 18);
+    ctx.font = '13px "Plus Jakarta Sans", Montserrat, sans-serif';
+    ctx.fillText('✦ Royal Islamic Nikah Invitation ✦', w / 2, h / 2 + 18);
     ctx.restore();
   }
 
@@ -455,12 +521,18 @@ function initScratchCard() {
     };
   }
 
-  function scratch(pos) {
+  function scratch(pos, radius = 28) {
     if (isRevealed) return;
     ctx.globalCompositeOperation = 'destination-out';
     ctx.beginPath();
-    ctx.arc(pos.x, pos.y, 28, 0, Math.PI * 2);
+    ctx.arc(pos.x, pos.y, radius, 0, Math.PI * 2);
     ctx.fill();
+
+    // If manual scratch starts, hide the centre button overlay smoothly
+    if (centerAction && !isAutomatedScratching) {
+      centerAction.style.opacity = '0';
+      centerAction.style.pointerEvents = 'none';
+    }
 
     checkProgressDebounced();
   }
@@ -503,6 +575,14 @@ function initScratchCard() {
     isRevealed = true;
     canvas.classList.add('fade-out');
 
+    if (centerAction) {
+      centerAction.style.opacity = '0';
+      centerAction.style.pointerEvents = 'none';
+      setTimeout(() => {
+        centerAction.style.display = 'none';
+      }, 500);
+    }
+
     if (fallbackBtn) {
       fallbackBtn.style.display = 'none';
     }
@@ -514,7 +594,68 @@ function initScratchCard() {
     }
   }
 
-  // Pointer & Touch Events
+  /**
+   * Automated Scratch Animation triggered when clicking "Scratch to Reveal" button
+   * Smoothly scratches circular radial patches across the card over ~1.2s before dissolving completely
+   */
+  function startAutomatedScratchAnimation() {
+    if (isRevealed || isAutomatedScratching) return;
+    isAutomatedScratching = true;
+
+    if (centerAction) {
+      centerAction.style.pointerEvents = 'none';
+      centerAction.style.transition = 'opacity 0.4s ease';
+      centerAction.style.opacity = '0';
+    }
+
+    const w = canvas.width;
+    const h = canvas.height;
+    const totalSteps = 30;
+    let step = 0;
+
+    // Generate distributed scratch points across the canvas
+    const scratchPoints = [];
+    // Start from center outwards in an organic spiral
+    for (let i = 0; i < totalSteps; i++) {
+      const angle = i * 0.75;
+      const radius = (i / totalSteps) * Math.min(w, h) * 0.55;
+      const px = w / 2 + Math.cos(angle) * radius + (Math.random() - 0.5) * 40;
+      const py = h / 2 + Math.sin(angle) * radius + (Math.random() - 0.5) * 30;
+      scratchPoints.push({ x: Math.max(10, Math.min(w - 10, px)), y: Math.max(10, Math.min(h - 10, py)) });
+    }
+
+    const interval = setInterval(() => {
+      if (step >= scratchPoints.length || isRevealed) {
+        clearInterval(interval);
+        completeReveal();
+        return;
+      }
+
+      const p = scratchPoints[step];
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 38 + Math.random() * 15, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Mini sparkles during automatic scratch
+      if (step % 4 === 0 && window.particleSystem && typeof window.particleSystem.burst === 'function') {
+        window.particleSystem.burst();
+      }
+
+      step++;
+    }, 38);
+  }
+
+  // Connect Centre Action Button: "Scratch to Reveal"
+  if (centerScratchBtn) {
+    centerScratchBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      startAutomatedScratchAnimation();
+    });
+  }
+
+  // Manual Pointer & Touch Events
   canvas.addEventListener('mousedown', (e) => {
     isDrawing = true;
     scratch(getPointerPos(e));
@@ -732,13 +873,38 @@ function initCountdownTimer() {
 function initAudioSystem() {
   const musicToggleBtn = document.getElementById('music-toggle-btn');
   const musicBtnText = document.getElementById('music-btn-text');
+  const muteToggleBtn = document.getElementById('mute-toggle-btn');
+  const speakerIconPath = document.getElementById('speaker-icon-path');
   const audioElement = document.getElementById('wedding-audio');
 
   let isPlaying = false;
+  let isMuted = false;
   let audioCtx = null;
   let synthInterval = null;
   let masterGain = null;
   let isUsingAudioFile = false;
+
+  // Speaker icons for Mute / Unmute
+  const UNMUTED_SVG = "M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z";
+  const MUTED_SVG = "M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27l4.73 4.73H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3zM12 4L9.91 6.09 12 8.18V4z";
+
+  // Mute / Unmute Toggle Button Handler
+  if (muteToggleBtn) {
+    muteToggleBtn.addEventListener('click', () => {
+      isMuted = !isMuted;
+      if (audioElement) {
+        audioElement.muted = isMuted;
+      }
+      if (masterGain && audioCtx) {
+        masterGain.gain.setValueAtTime(isMuted ? 0 : 0.22, audioCtx.currentTime);
+      }
+      muteToggleBtn.classList.toggle('muted', isMuted);
+      if (speakerIconPath) {
+        speakerIconPath.setAttribute('d', isMuted ? MUTED_SVG : UNMUTED_SVG);
+      }
+      showToast(isMuted ? "Audio Muted" : "Audio Unmuted");
+    });
+  }
 
   // Harmonious pentatonic Oud / Harp melody representing Baraka Allahu Lakuma
   function playNote(freq, time, duration = 3.5) {
@@ -766,7 +932,7 @@ function initAudioSystem() {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtx = new AudioContext();
       masterGain = audioCtx.createGain();
-      masterGain.gain.setValueAtTime(0.22, audioCtx.currentTime);
+      masterGain.gain.setValueAtTime(isMuted ? 0 : 0.22, audioCtx.currentTime);
       masterGain.connect(audioCtx.destination);
     }
 
@@ -836,7 +1002,7 @@ function initAudioSystem() {
     });
 
     audioElement.addEventListener('error', () => {
-      // Audio file not found or couldn't load, fallback to harmonious synthesizer without false indicators
+      console.warn("Expected MP3 'public/audio/baraka-allahu-lakuma.mp3' not found on server.");
       if (isPlaying && isUsingAudioFile) {
         startSynthHarmony();
       }
@@ -850,6 +1016,7 @@ function initAudioSystem() {
     // First attempt to play the actual MP3 file
     if (audioElement) {
       audioElement.loop = true;
+      audioElement.muted = isMuted;
       const playPromise = audioElement.play();
 
       if (playPromise !== undefined) {
@@ -858,8 +1025,7 @@ function initAudioSystem() {
           setPlayingState(true);
           showToast(dict.music_toast_start);
         }).catch((err) => {
-          // If the MP3 file is not present yet (or browser blocked it), fallback cleanly to synthesized melody
-          console.info("MP3 file not loaded, using peaceful wedding synthesizer harmony:", err.message);
+          console.info("MP3 'public/audio/baraka-allahu-lakuma.mp3' not yet present in repository, playing serene backup harmony:", err.message);
           setPlayingState(true);
           startSynthHarmony();
           showToast(dict.music_toast_start);

@@ -64,24 +64,65 @@
       <button class="lang-tab" data-lang="ar" role="tab" aria-selected="false" type="button">العربية</button>
     </div>
 
-    <!-- Music On/Off Toggle -->
-    <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Toggle ambient wedding melody" type="button">
-      <span class="music-icon-wrap" aria-hidden="true">
-        <span class="sound-waves">
-          <span class="sound-bar"></span>
-          <span class="sound-bar"></span>
-          <span class="sound-bar"></span>
+    <!-- Music Controls: Mute & Play/Pause -->
+    <div class="music-controls-group">
+      <button id="mute-toggle-btn" class="mute-toggle-btn" aria-label="Mute / Unmute Audio" type="button" title="Mute/Unmute">
+        <svg class="speaker-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path id="speaker-icon-path" d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+        </svg>
+      </button>
+
+      <button id="music-toggle-btn" class="music-toggle-btn" aria-label="Toggle ambient wedding melody" type="button">
+        <span class="music-icon-wrap" aria-hidden="true">
+          <span class="sound-waves">
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+            <span class="sound-bar"></span>
+          </span>
         </span>
-      </span>
-      <span id="music-btn-text" data-i18n="music_play">Play Music</span>
-    </button>
+        <span id="music-btn-text" data-i18n="music_play">Play Music</span>
+      </button>
+    </div>
   </header>
+
+  <!-- ==========================================================================
+       ORIGINAL OPENING SCREEN OVERLAY (Click Centre Button to Open Invitation)
+       ========================================================================== -->
+  <div id="envelope-overlay" role="dialog" aria-modal="true" aria-label="Wedding Invitation Opening Screen">
+    <div class="envelope-card">
+      <div class="envelope-bismillah" lang="ar" dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+      <p class="envelope-subtitle" data-i18n="envelope_subtitle">Royal Islamic Wedding Invitation</p>
+      
+      <div class="envelope-names">
+        <span data-i18n="bride_name">A. Faizra</span>
+        <span class="envelope-and">&amp;</span>
+        <span data-i18n="groom_name">R. Mohamed Sheik Ismail</span>
+      </div>
+      
+      <p class="envelope-date-preview" data-i18n="envelope_date_preview">Thursday, 24 December 2026 • Richway Garden, Khadeja Mahal</p>
+
+      <!-- Centre Interactive Button: Open Invitation / Begin Our Journey -->
+      <div class="wax-seal-wrapper" id="wax-seal-btn" role="button" tabindex="0" aria-label="Open the wedding invitation">
+        <div class="wax-seal-pulse"></div>
+        <img src="assets/blue_seal.jpg" alt="Royal Gold Nikah Seal" class="wax-seal-img" width="140" height="140">
+      </div>
+
+      <button id="open-invitation-btn" class="btn-royal-gold open-invitation-center-btn" type="button">
+        <span class="btn-sparkle-icon">✦</span>
+        <span data-i18n="btn_open_invitation">Open Invitation</span>
+        <span class="btn-sparkle-icon">✦</span>
+      </button>
+
+      <div class="wax-seal-tap-hint">
+        <span>✦</span> <span data-i18n="envelope_tap_hint">Click Centre Button to Open Invitation</span> <span>✦</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Background Audio Element ("Baraka Allahu Lakuma") -->
   <audio id="wedding-audio" loop preload="none">
     <source src="public/audio/baraka-allahu-lakuma.mp3" type="audio/mpeg">
   </audio>
-
 
   <!-- ==========================================================================
        MAIN INVITATION CARD CONTAINER (EXACTLY 5 SECTIONS)
@@ -127,6 +168,7 @@
       <div class="scratch-card-container" id="scratch-card-box">
         <!-- Revealed Content Underneath Canvas -->
         <div class="scratch-revealed-content" id="scratch-revealed-layer">
+          <div class="scratch-backdrop-decor" aria-hidden="true"></div>
           <div class="scratch-sparkle-overlay" aria-hidden="true"></div>
           <div class="scratch-initials-badge">
             <span class="scratch-initials-text">F &amp; M</span>
@@ -146,19 +188,21 @@
 
         <!-- Scratchable Gold-Blue Pattern Canvas -->
         <canvas id="scratch-canvas" class="scratch-canvas" width="460" height="260" aria-label="Scratch card canvas to reveal bride and groom details"></canvas>
-      </div>
 
-      <!-- Accessible Fallback Reveal Button (For keyboard/screen-reader users) -->
-      <div class="scratch-accessibility-wrap">
-        <button id="scratch-reveal-btn" class="scratch-accessibility-btn" type="button" data-i18n="btn_scratch_reveal">
-          ✦ Tap to Instantly Reveal Special Day ✦
-        </button>
+        <!-- Centre Scratch Action Button (Triggers automated scratch reveal) -->
+        <div class="scratch-center-action-overlay" id="scratch-center-action">
+          <button id="scratch-center-btn" class="btn-royal-gold scratch-center-btn" type="button">
+            <span class="scratch-sparkle-symbol">✦</span>
+            <span id="scratch-btn-label" data-i18n="btn_scratch_action">Scratch to Reveal</span>
+            <span class="scratch-sparkle-symbol">✦</span>
+          </button>
+        </div>
       </div>
 
       <!-- Music Choice Modal / Banner (Appears after scratch reveal) -->
       <div class="music-choice-card" id="music-choice-container">
         <p class="music-choice-prompt" data-i18n="music_choice_prompt">
-          Would you like to play the serene ambient wedding melody while viewing?
+          Would you like to play “Baraka Allahu Lakuma” while viewing our wedding invitation?
         </p>
         <div class="music-choice-actions">
           <button id="choice-play-music" class="btn-royal-gold" type="button">
@@ -172,6 +216,7 @@
         </div>
       </div>
     </section>
+
 
     <!-- ------------------------------------------------------------------------
          SECTION 2: THE COUPLE AND THEIR FAMILIES
