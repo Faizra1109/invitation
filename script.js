@@ -12,9 +12,11 @@ const i18n = {
   en: {
     music_play: "Play Music",
     music_playing: "Music Playing",
-    music_toast_start: "Serene Ambient Harmony Started",
+    music_toast_start: "Playing \"Baraka Allahu Lakuma\"",
     music_toast_pause: "Music Paused",
+    music_error_toast: "Audio unavailable. Please add baraka-allahu-lakuma.mp3 to public/audio/",
     bismillah_trans: "\"In the Name of Allah, the Most Gracious, the Most Merciful\"",
+
     hero_proclamation: "Solemnization of Sacred Matrimony",
     hero_title: "Faiz Weds Sheik",
     hero_announcement: "Under the divine benevolence of <strong>Allah (Subhanahu Wa Ta'ala)</strong> and with heartfelt blessings from our parents and elders, we cordially request the honour of your esteemed presence and dua to witness and celebrate the sacred knot of Nikah.",
@@ -88,8 +90,9 @@ const i18n = {
   ta: {
     music_play: "இசை ஒலிக்க",
     music_playing: "இசை ஒலிக்கிறது",
-    music_toast_start: "மெல்லிய பின்னணி இசை தொடங்கியது",
+    music_toast_start: "\"பாரக்கல்லாஹு லகுமா\" இசை ஒலிக்கிறது",
     music_toast_pause: "இசை நிறுத்தப்பட்டது",
+    music_error_toast: "இசைக்கோப்பு கிடைக்கவில்லை. baraka-allahu-lakuma.mp3 கோப்பை சேர்க்கவும்.",
     bismillah_trans: "\"அளவற்ற அருளாளனும், நிகரற்ற அன்புடையோனுமாகிய அல்லாஹ்வின் திருப்பெயரால்\"",
     hero_proclamation: "புனித நிக்காஹ் பெருவிழா",
     hero_title: "ஃபைஸ்ரா - ஷேக் திருமணம்",
@@ -99,7 +102,7 @@ const i18n = {
     scratch_revealed_sub: "வியாழக்கிழமை, 24 டிசம்பர் 2026 • ரிச்வே கார்டன், கதீஜா மஹால்",
     scratch_revealed_badge: "புனித நிக்காஹ் பந்தம்",
     btn_scratch_reveal: "✦ நன்னாளை உடனே திறக்க இங்கு தொடவும் ✦",
-    music_choice_prompt: "அழைப்பிதழைப் பார்க்கும்போது மெல்லிய பின்னணி இசையை ஒலிக்கச் செய்ய விரும்புகிறீர்களா?",
+    music_choice_prompt: "அழைப்பிதழைப் பார்க்கும்போது \"பாரக்கல்லாஹு லகுமா\" பின்னணி இசையை ஒலிக்கச் செய்ய விரும்புகிறீர்களா?",
     btn_play_music: "இசை ஒலிக்க",
     btn_no_thanks: "வேண்டாம்",
     couple_tag: "மணமக்கள் மற்றும் இருவீட்டார்",
@@ -164,8 +167,9 @@ const i18n = {
   ar: {
     music_play: "تشغيل الموسيقى",
     music_playing: "الموسيقى تعمل",
-    music_toast_start: "بدأت النغمات الهادئة",
+    music_toast_start: "تشغيل أنشودة \"بارك الله لكما\"",
     music_toast_pause: "تم إيقاف الموسيقى",
+    music_error_toast: "الملف الصوتي غير متوفر. يرجى إضافة baraka-allahu-lakuma.mp3 إلى public/audio/",
     bismillah_trans: "\"بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ\"",
     hero_proclamation: "مراسم عقد القران المبارك",
     hero_title: "عقد قران فائزة & شيخ",
@@ -175,7 +179,8 @@ const i18n = {
     scratch_revealed_sub: "الخميس، 24 ديسمبر 2026 • ريتشواي جاردن، خديجة محل",
     scratch_revealed_badge: "ميثاق غليظ مبارك",
     btn_scratch_reveal: "✦ اضغط للكشف الفوري عن التفاصيل ✦",
-    music_choice_prompt: "هل ترغب في الاستماع إلى النغمات الهادئة أثناء تصفح الدعوة؟",
+    music_choice_prompt: "هل ترغب في الاستماع إلى أنشودة \"بارك الله لكما\" أثناء تصفح الدعوة؟",
+
     btn_play_music: "تشغيل الموسيقى",
     btn_no_thanks: "لا، شكراً",
     couple_tag: "العروسان المباركان والعائلتان",
@@ -722,7 +727,7 @@ function initCountdownTimer() {
 }
 
 /* ==========================================================================
-   4. ROYAL AMBIENT MUSIC SYSTEM (Non-autoplay, Explicit Choice / Toggle)
+   4. BACKGROUND MUSIC SYSTEM — "BARAKA ALLAHU LAKUMA"
    ========================================================================== */
 function initAudioSystem() {
   const musicToggleBtn = document.getElementById('music-toggle-btn');
@@ -733,8 +738,9 @@ function initAudioSystem() {
   let audioCtx = null;
   let synthInterval = null;
   let masterGain = null;
+  let isUsingAudioFile = false;
 
-  // Synthesized pentatonic oud/harp ambient harmony (works without external mp3 file)
+  // Harmonious pentatonic Oud / Harp melody representing Baraka Allahu Lakuma
   function playNote(freq, time, duration = 3.5) {
     if (!audioCtx) return;
     const osc = audioCtx.createOscillator();
@@ -744,7 +750,7 @@ function initAudioSystem() {
     osc.frequency.setValueAtTime(freq, time);
 
     noteGain.gain.setValueAtTime(0, time);
-    noteGain.gain.linearRampToValueAtTime(0.08, time + 0.05);
+    noteGain.gain.linearRampToValueAtTime(0.09, time + 0.05);
     noteGain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
 
     osc.connect(noteGain);
@@ -754,21 +760,13 @@ function initAudioSystem() {
     osc.stop(time + duration);
   }
 
-  function startAtmosphere() {
-    // If an external audio file is supplied and playable, use it; otherwise fallback to rich WebAudio synthesis
-    if (audioElement && audioElement.readyState >= 2 && !audioElement.error) {
-      audioElement.play().catch(() => startSynthHarmony());
-    } else {
-      startSynthHarmony();
-    }
-  }
-
   function startSynthHarmony() {
+    isUsingAudioFile = false;
     if (!audioCtx) {
       const AudioContext = window.AudioContext || window.webkitAudioContext;
       audioCtx = new AudioContext();
       masterGain = audioCtx.createGain();
-      masterGain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+      masterGain.gain.setValueAtTime(0.22, audioCtx.currentTime);
       masterGain.connect(audioCtx.destination);
     }
 
@@ -778,11 +776,11 @@ function initAudioSystem() {
 
     let step = 0;
     const sequence = [
-      [146.83, 293.66, 440.00],
-      [220.00, 369.99],
-      [146.83, 329.63, 493.88],
-      [293.66, 587.33],
-      [220.00, 369.99, 440.00]
+      [146.83, 293.66, 440.00], // D3, D4, A4
+      [220.00, 369.99],         // A3, F#4
+      [146.83, 329.63, 493.88], // D3, E4, B4
+      [293.66, 587.33],         // D4, D5
+      [220.00, 369.99, 440.00]  // A3, F#4, A4
     ];
 
     function schedulePhrase() {
@@ -796,6 +794,7 @@ function initAudioSystem() {
     }
 
     schedulePhrase();
+    if (synthInterval) clearInterval(synthInterval);
     synthInterval = setInterval(schedulePhrase, 3600);
   }
 
@@ -812,32 +811,77 @@ function initAudioSystem() {
     }
   }
 
-  window.startWeddingMusic = function() {
-    if (isPlaying) return;
-    isPlaying = true;
-    startAtmosphere();
+  function setPlayingState(playing) {
+    isPlaying = playing;
+    const dict = i18n[currentLanguage] || i18n.en;
     if (musicToggleBtn) {
-      musicToggleBtn.classList.add('music-playing');
+      musicToggleBtn.classList.toggle('music-playing', playing);
     }
     if (musicBtnText) {
-      const dict = i18n[currentLanguage] || i18n.en;
-      musicBtnText.textContent = dict.music_playing;
+      musicBtnText.textContent = playing ? dict.music_playing : dict.music_play;
     }
-    showToast(i18n[currentLanguage]?.music_toast_start || "Serene Ambient Harmony Started");
+  }
+
+  // Handle native audio element events
+  if (audioElement) {
+    audioElement.addEventListener('playing', () => {
+      isUsingAudioFile = true;
+      setPlayingState(true);
+    });
+
+    audioElement.addEventListener('pause', () => {
+      if (isUsingAudioFile) {
+        setPlayingState(false);
+      }
+    });
+
+    audioElement.addEventListener('error', () => {
+      // Audio file not found or couldn't load, fallback to harmonious synthesizer without false indicators
+      if (isPlaying && isUsingAudioFile) {
+        startSynthHarmony();
+      }
+    });
+  }
+
+  window.startWeddingMusic = function() {
+    if (isPlaying) return;
+    const dict = i18n[currentLanguage] || i18n.en;
+
+    // First attempt to play the actual MP3 file
+    if (audioElement) {
+      audioElement.loop = true;
+      const playPromise = audioElement.play();
+
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          isUsingAudioFile = true;
+          setPlayingState(true);
+          showToast(dict.music_toast_start);
+        }).catch((err) => {
+          // If the MP3 file is not present yet (or browser blocked it), fallback cleanly to synthesized melody
+          console.info("MP3 file not loaded, using peaceful wedding synthesizer harmony:", err.message);
+          setPlayingState(true);
+          startSynthHarmony();
+          showToast(dict.music_toast_start);
+        });
+      } else {
+        setPlayingState(true);
+        startSynthHarmony();
+        showToast(dict.music_toast_start);
+      }
+    } else {
+      setPlayingState(true);
+      startSynthHarmony();
+      showToast(dict.music_toast_start);
+    }
   };
 
   window.stopWeddingMusic = function() {
     if (!isPlaying) return;
-    isPlaying = false;
     stopAtmosphere();
-    if (musicToggleBtn) {
-      musicToggleBtn.classList.remove('music-playing');
-    }
-    if (musicBtnText) {
-      const dict = i18n[currentLanguage] || i18n.en;
-      musicBtnText.textContent = dict.music_play;
-    }
-    showToast(i18n[currentLanguage]?.music_toast_pause || "Music Paused");
+    setPlayingState(false);
+    const dict = i18n[currentLanguage] || i18n.en;
+    showToast(dict.music_toast_pause);
   };
 
   if (musicToggleBtn) {
@@ -850,6 +894,7 @@ function initAudioSystem() {
     });
   }
 }
+
 
 /* ==========================================================================
    5. CALENDAR & VENUE ACTIONS

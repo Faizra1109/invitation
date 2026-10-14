@@ -50,11 +50,17 @@ A bespoke, royal digital wedding card website designed for the solemnization of 
 
 ---
 
-### Audio Integration
+### Audio Integration — "Baraka Allahu Lakuma"
 
-* The site uses an ambient pentatonic synthesizer harmony with gentle oud/harp tones via WebAudio API.
-* An optional custom MP3 file can be placed at `assets/ambient_melody.mp3`.
-* Music only plays after explicit visitor choice (**Play Music**).
+* **Target Audio File Path:** `public/audio/baraka-allahu-lakuma.mp3`
+* **Non-Autoplay Compliance:** Music strictly starts **only** when a guest explicitly clicks **"Play Music"** after the scratch reveal or via the top music toggle.
+* **Persistent Playback:** The music plays smoothly across all five sections without resetting or stuttering during scrolling.
+* **Fallback & Error Handling:** If the MP3 file has not yet been placed in `public/audio/`, the website gracefully transitions to a serene synthesized ambient melody, ensuring uninterrupted operation without broken audio errors or misleading playback indicators.
+* **Instructions to add your audio file:**
+  1. Obtain your legal audio version of *“Baraka Allahu Lakuma”*.
+  2. Save the file directly as:
+     `public/audio/baraka-allahu-lakuma.mp3`
+  3. The website will automatically detect and play the file when visitors click "Play Music".
 
 ---
 
