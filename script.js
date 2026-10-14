@@ -1014,29 +1014,61 @@ function initAudioSystem() {
     if (isPlaying) return;
     const dict = i18n[currentLanguage] || i18n.en;
 
-    // First attempt to play the actual MP3 file
     if (audioElement) {
       audioElement.loop = true;
       audioElement.muted = isMuted;
       audioElement.volume = 1.0;
-      const playPromise = audioElement.play();
 
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
+      // Pre-load to detect file availability before triggering play
+      audioElement.load();
+
+      const onCanPlay = () => {
+        audioElement.removeEventListener('canplaythrough', onCanPlay);
+        audioElement.removeEventListener('error', onError);
+
+        const playPromise = audioElement.play();
+        if (playPromise !== undefined) {
+          playPromise.then(() => {
+            isUsingAudioFile = true;
+            setPlayingState(true);
+            showToast(dict.music_toast_start);
+          }).catch((err) => {
+            console.warn('Audio play() blocked:', err.message, '— switching to synthesizer.');
+            setPlayingState(true);
+            startSynthHarmony();
+            showToast(dict.music_toast_start);
+          });
+        } else {
           isUsingAudioFile = true;
           setPlayingState(true);
           showToast(dict.music_toast_start);
-        }).catch((err) => {
-          console.info("MP3 'public/audio/baraka-allahu-lakuma.mp3' not yet present in repository, playing serene backup harmony:", err.message);
-          setPlayingState(true);
-          startSynthHarmony();
-          showToast(dict.music_toast_start);
-        });
-      } else {
+        }
+      };
+
+      const onError = () => {
+        audioElement.removeEventListener('canplaythrough', onCanPlay);
+        audioElement.removeEventListener('error', onError);
+        console.warn('Audio file unavailable — switching to synthesizer.');
         setPlayingState(true);
         startSynthHarmony();
         showToast(dict.music_toast_start);
-      }
+      };
+
+      audioElement.addEventListener('canplaythrough', onCanPlay, { once: true });
+      audioElement.addEventListener('error', onError, { once: true });
+
+      // Safety timeout: if neither event fires in 6 seconds, fall back to synth
+      setTimeout(() => {
+        if (!isPlaying) {
+          audioElement.removeEventListener('canplaythrough', onCanPlay);
+          audioElement.removeEventListener('error', onError);
+          console.warn('Audio load timed out — switching to synthesizer.');
+          setPlayingState(true);
+          startSynthHarmony();
+          showToast(dict.music_toast_start);
+        }
+      }, 6000);
+
     } else {
       setPlayingState(true);
       startSynthHarmony();
